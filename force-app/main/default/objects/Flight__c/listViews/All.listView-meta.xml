@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ICAO24__c</columns>
+    <columns>Callsign__c</columns>
+    <columns>Origin_Country__c</columns>
+    <columns>On_Ground__c</columns>
+    <columns>Velocity__c</columns>
+    <columns>Baro_Altitude__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

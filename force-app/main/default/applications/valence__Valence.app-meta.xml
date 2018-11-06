@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>valence__Valence</defaultLandingTab>
+    <description>Native Data Integration and Orchestration in Salesforce</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Valence</label>
+    <logo>valence__valence_graphics/valence__logo</logo>
+    <tabs>valence__Valence</tabs>
+    <tabs>valence__ValenceSyncEvent__c</tabs>
+    <tabs>Flight__c</tabs>
+</CustomApplication>

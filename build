@@ -12,6 +12,10 @@ sfdx force:package:install --package 04t46000002BXF3 -u valence-flights -w 20
 echo "sfdx force:source:push -u valence-flights"
 sfdx force:source:push -u valence-flights
 
+# Assign the demo permission set to the primary user
+echo "sfdx force:user:permset:assign -n Flights"
+sfdx force:user:permset:assign -n Flights
+
 # Login and open
 echo "sfdx force:org:open -u valence-flights"
 sfdx force:org:open -u valence-flights

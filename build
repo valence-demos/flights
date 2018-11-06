@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Create the scratch org
+echo "sfdx force:org:create -s -f config/project-scratch-def.json -a valence-flights -s -d 30"
+sfdx force:org:create -s -f config/project-scratch-def.json -a valence-flights -s -d 30
+
+# Install Valence
+echo "sfdx force:package:install --package 04t46000002BXF3 -u valence-flights -w 20"
+sfdx force:package:install --package 04t46000002BXF3 -u valence-flights -w 20
+
+# Push the project into the org
+echo "sfdx force:source:push -u valence-flights"
+sfdx force:source:push -u valence-flights
+
+# Login and open
+echo "sfdx force:org:open -u valence-flights"
+sfdx force:org:open -u valence-flights

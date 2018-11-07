@@ -17,5 +17,5 @@ echo "sfdx force:user:permset:assign -n Flights"
 sfdx force:user:permset:assign -n Flights
 
 # Login and open
-echo "sfdx force:org:open -u valence-flights"
-sfdx force:org:open -u valence-flights
+echo "sfdx force:org:open -u valence-flights -p /lightning/n/valence__Valence"
+sfdx force:org:open -u valence-flights -p /lightning/n/valence__Valence

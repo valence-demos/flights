@@ -1,0 +1,76 @@
+<aura:component description="Shows a map of active flights stored in the Flight__c object." implements="force:appHostable" controller="FlightViewerController">
+
+	<ltng:require styles="/resource/leaflet/leaflet.css" scripts="/resource/leaflet/leaflet.js" afterScriptsLoaded="{!c.jsLoaded}" />
+
+	<!--Attributes-->
+	<aura:attribute name="mapRef" type="Object" />
+	<aura:attribute name="flights" type="Flight__c[]" />
+
+	<aura:attribute name="mapLoaded" type="Boolean" default="false" description="Semaphore to help with loading race condition" />
+	<aura:attribute name="flightsLoaded" type="Boolean" default="false" description="Semaphore to help with loading race condition" />
+
+	<!--Published Events-->
+
+	<!--Event Handlers-->
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+	<!--Data Layer-->
+
+	<!--Content-->
+	<lightning:layout multipleRows="true" pullToBoundary="small">
+
+		<lightning:layoutItem size="9" padding="around-small">
+			<div id="map" class="mapBox"></div>
+		</lightning:layoutItem>
+
+		<lightning:layoutItem size="3" padding="around-small">
+
+			<lightning:card title="{! 'Flights (' + v.flights.length + ')'}" class="slds-p-around_x-small">
+
+				<lightning:layout multipleRows="true">
+
+					<aura:iteration items="{!v.flights}" var="flight">
+
+						<lightning:layoutItem size="12" class="slds-m-vertical_xx-small">
+
+							<lightning:tile label="{#flight.Callsign__c}" href="{# 'https://flightaware.com/live/flight/' + flight.Callsign__c}">
+
+								<aura:set attribute="media">
+									<lightning:icon iconName="custom:custom20" />
+								</aura:set>
+
+								<dl class="slds-dl_horizontal">
+									<dt class="slds-dl_horizontal__label">
+										<p class="slds-truncate">Origin Country:</p>
+									</dt>
+									<dd class="slds-dl_horizontal__detail slds-tile__meta">
+										<p class="slds-truncate">{#flight.Origin_Country__c}</p>
+									</dd>
+									<dt class="slds-dl_horizontal__label">
+										<p class="slds-truncate">Altitude:</p>
+									</dt>
+									<dd class="slds-dl_horizontal__detail slds-tile__meta">
+										<p class="slds-truncate"><lightning:formattedNumber value="{#flight.Baro_Altitude__c * 3.28084}" maximumFractionDigits="0"/> ft</p>
+									</dd>
+									<dt class="slds-dl_horizontal__label">
+										<p class="slds-truncate">Velocity:</p>
+									</dt>
+									<dd class="slds-dl_horizontal__detail slds-tile__meta">
+										<p class="slds-truncate"><lightning:formattedNumber value="{#flight.Velocity__c * 2.23694}" maximumFractionDigits="0"/> mph</p>
+									</dd>
+								</dl>
+
+							</lightning:tile>
+
+						</lightning:layoutItem>
+
+					</aura:iteration>
+
+				</lightning:layout>
+
+			</lightning:card>
+
+		</lightning:layoutItem>
+	</lightning:layout>
+
+</aura:component>

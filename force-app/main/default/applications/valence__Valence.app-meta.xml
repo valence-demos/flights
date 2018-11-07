@@ -10,4 +10,5 @@
     <tabs>valence__Valence</tabs>
     <tabs>valence__ValenceSyncEvent__c</tabs>
     <tabs>Flight__c</tabs>
+    <tabs>Flight_Viewer</tabs>
 </CustomApplication>

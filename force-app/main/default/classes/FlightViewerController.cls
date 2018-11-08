@@ -4,7 +4,7 @@
 public with sharing class FlightViewerController {
 
 	public static final Pattern commercialAirlines = Pattern.compile('[a-zA-Z]{3}(\\d*)');
-	public static final Integer activityCutoffInSeconds = 600;
+	public static final Integer activityCutoffInSeconds = 300;
 
 	@AuraEnabled
 	public static List<Flight__c> getAirborneFlights() {

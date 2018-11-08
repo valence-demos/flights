@@ -87,6 +87,10 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabSettings>
+        <tab>Flight_Viewer</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Flight__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>

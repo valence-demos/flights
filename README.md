@@ -2,7 +2,7 @@
 
 This demo was used to win the Northeast Dreamin 2018 Demo Jam.
 
-It mashes up the [Open Sky Network API](https://opensky-network.org/) with a the [Geolocation Trailhead Project](https://trailhead.salesforce.com/en/content/learn/projects/account-geolocation-app) to build a real-time Flight viewer.
+It mashes up the [Open Sky Network API](https://opensky-network.org/) with the [Geolocation Trailhead Project](https://trailhead.salesforce.com/en/content/learn/projects/account-geolocation-app) to build a real-time Flight viewer.
 
 ![Live flights in the air above the conference location](/images/demo.jpg)
 
